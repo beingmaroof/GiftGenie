@@ -39,13 +39,16 @@ The application consists of four main pages:
 
 The project uses the following technologies:
 
-| Technology            | Purpose                                                   |
-|-----------------------------------------------------------------------------------|
 | HTML5                 | Structure and content of web pages                        |
+
 | CSS3                  | Styling, layouts, animations and responsive design        |
+
 | JavaScript (ES6+)     | Form handling, recommendation logic and user interactions |
+
 | JSON                  | Storage of gift information and related records           |
+
 | Browser LocalStorage  | Saving wishlist items locally                             |
+
 | Node.js               | Running the project through a local development server    |
 
 No frontend framework, backend database, machine learning model or paid external API is used.
