@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Wishlist — GiftGenie</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="nav" role="navigation" aria-label="Main navigation">
+    <div class="nav__container">
+      <a href="index.html" class="nav__logo" aria-label="GiftGenie home">
+        <svg class="nav__logo-icon" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M20 7h-2.18c.11-.31.18-.65.18-1 0-1.66-1.34-3-3-3-1.62 0-2.95 1.19-3 2.76L12 5.76l-.01-.01C11.95 4.19 10.62 3 9 3 7.34 3 6 4.34 6 6c0 .35.07.69.18 1H4c-1.11 0-1.99.89-1.99 2L2 19c0 1.11.89 2 2 2h16c1.11 0 2-.89 2-2V9c0-1.11-.89-2-2-2zm-5-2c.55 0 1 .45 1 1s-.45 1-1 1h-2.22c.22-.64.8-1.16 1.48-1.64.22-.16.48-.36.74-.36zM9 5c.26 0 .52.2.74.36.68.48 1.26 1 1.48 1.64H9c-.55 0-1-.45-1-1s.45-1 1-1zm11 14H4V9h7v10h2V9h7v10z"/>
+        </svg>
+        <span>GiftGenie</span>
+      </a>
+
+      <div class="nav__links">
+        <a href="index.html" class="nav__link">Home</a>
+        <a href="finder.html" class="nav__link">Find Gifts</a>
+        <a href="wishlist.html" class="nav__link active">Wishlist</a>
+      </div>
+
+      <a href="finder.html" class="nav__cta desktop-only">Find a Gift</a>
+
+      <button class="nav__mobile-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+        <div class="hamburger">
+          <span></span>
+          <span></span>
+        </div>
+      </button>
+    </div>
+
+    <!-- Mobile Drawer Menu -->
+    <div class="nav__mobile-menu" role="menu">
+      <a href="index.html" class="nav__link" role="menuitem">Home</a>
+      <a href="finder.html" class="nav__link" role="menuitem">Find Gifts</a>
+      <a href="wishlist.html" class="nav__link" role="menuitem">Wishlist</a>
+      <a href="finder.html" class="btn btn--primary btn--large btn--full" style="margin-top: 16px;">Find a Gift</a>
+    </div>
+  </nav>
+
+  <main>
+    <!-- Header -->
+    <section class="page-header">
+      <div class="container container--narrow">
+        <span class="section__eyebrow">Saved Items</span>
+        <h1 class="page-header__title">Your Wishlist</h1>
+        <p class="page-header__description">Keep track of items you're considering for upcoming celebrations.</p>
+      </div>
+    </section>
+
+    <!-- Wishlist Body -->
+    <section class="section" style="padding-top: var(--space-8);">
+      <div class="container container--wide">
+        
+        <div class="wishlist-header" id="wishlistHeader" style="display: none;">
+          <div>
+            <h2 id="wishlistCountTitle" style="font-size: 21px; font-weight: 600;">Saved Gifts</h2>
+            <p id="wishlistSummary" style="font-size: 14px; color: var(--color-text-secondary);"></p>
+          </div>
+          <div style="display: flex; gap: var(--space-3); align-items: center;">
+            <button class="btn btn--secondary btn--small" id="clearWishlistBtn">Clear All</button>
+            <a href="finder.html" class="btn btn--primary btn--small">Find More Gifts</a>
+          </div>
+        </div>
+
+        <div id="wishlistContainer">
+          <div class="loading-state" id="wishlistLoading">
+            <div class="loading-spinner"></div>
+            <p>Loading your saved items...</p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container text-center">
+      <div style="font-size: 12px; color: var(--color-text-tertiary);">
+        &copy; 2026 GiftGenie. All rights reserved.
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/storage.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/wishlist.js"></script>
+</body>
+</html>

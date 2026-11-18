@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GiftGenie — Find the Perfect Gift</title>
+
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+
+<body>
+
+  <!-- Navigation bar -->
+  <nav class="nav" role="navigation" aria-label="Main navigation">
+    <div class="nav__container">
+
+      <a href="index.html" class="nav__logo" aria-label="GiftGenie home">
+        <svg class="nav__logo-icon" viewBox="0 0 24 24" fill="currentColor">
+          <path
+            d="M20 7h-2.18c.11-.31.18-.65.18-1 0-1.66-1.34-3-3-3-1.62 0-2.95 1.19-3 2.76L12 5.76l-.01-.01C11.95 4.19 10.62 3 9 3 7.34 3 6 4.34 6 6c0 .35.07.69.18 1H4c-1.11 0-1.99.89-1.99 2L2 19c0 1.11.89 2 2 2h16c1.11 0 2-.89 2-2V9c0-1.11-.89-2-2-2zm-5-2c.55 0 1 .45 1 1s-.45 1-1 1h-2.22c.22-.64.8-1.16 1.48-1.64.22-.16.48-.36.74-.36zM9 5c.26 0 .52.2.74.36.68.48 1.26 1 1.48 1.64H9c-.55 0-1-.45-1-1s.45-1 1-1zm11 14H4V9h7v10h2V9h7v10z" />
+        </svg>
+        <span>GiftGenie</span>
+      </a>
+
+      <div class="nav__links">
+        <a href="index.html" class="nav__link active">Home</a>
+        <a href="finder.html" class="nav__link">Find Gifts</a>
+        <a href="wishlist.html" class="nav__link">Wishlist</a>
+      </div>
+
+      <a href="finder.html" class="nav__cta desktop-only">Find a Gift</a>
+
+      <button class="nav__mobile-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+        <div class="hamburger">
+          <span></span>
+          <span></span>
+        </div>
+      </button>
+    </div>
+
+    <!-- Menu shown on smaller screens -->
+    <div class="nav__mobile-menu" role="menu">
+      <a href="index.html" class="nav__link" role="menuitem">Home</a>
+      <a href="finder.html" class="nav__link" role="menuitem">Find Gifts</a>
+      <a href="wishlist.html" class="nav__link" role="menuitem">Wishlist</a>
+      <a href="finder.html" class="btn btn--primary btn--large btn--full" style="margin-top: 16px;">Find a Gift</a>
+    </div>
+  </nav>
+
+  <main>
+
+    <!-- Main introduction -->
+    <section class="hero">
+      <div class="container hero__container">
+        <span class="hero__eyebrow">Personalized Gift Discovery</span>
+
+        <h1 class="hero__title">
+          Make every gift <span>feel personal.</span>
+        </h1>
+
+        <p class="hero__description">
+          Thoughtful recommendations tailored to their interests, personality, and your exact budget. Effortless,
+          accurate, and completely transparent.
+        </p>
+
+        <div class="hero__actions">
+          <a href="finder.html" class="btn btn--primary btn--large">Find the Perfect Gift</a>
+          <a href="#how-it-works" class="btn btn--ghost" style="font-size: 17px;">How it works &rsaquo;</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- A quick explanation of how GiftGenie works -->
+    <section class="section section--secondary" id="how-it-works">
+      <div class="container">
+
+        <div class="section__header">
+          <span class="section__eyebrow">Three Simple Steps</span>
+          <h2 class="section__title">Gifting made intelligent.</h2>
+          <p class="section__description">
+            GiftGenie matches personal traits and hard budget ceilings to pinpoint ideal gifts.
+          </p>
+        </div>
+
+        <div class="steps-grid">
+
+          <div class="step-card">
+            <div class="step-card__number">Step 01</div>
+            <h3 class="step-card__title">Tell Us About Them</h3>
+            <p class="step-card__text">
+              Select their relationship, age group, favorite hobbies, and personality traits.
+            </p>
+          </div>
+
+          <div class="step-card">
+            <div class="step-card__number">Step 02</div>
+            <h3 class="step-card__title">Set Your Parameters</h3>
+            <p class="step-card__text">
+              Choose the special celebration and select your budget ceiling. We strictly honor it.
+            </p>
+          </div>
+
+          <div class="step-card">
+            <div class="step-card__number">Step 03</div>
+            <h3 class="step-card__title">Receive Curated Matches</h3>
+            <p class="step-card__text">
+              Get top-ranked recommendations with clear match reasons and instant details.
+            </p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Browse gifts by occasion -->
+    <section class="section">
+      <div class="container">
+
+        <div class="section__header">
+          <span class="section__eyebrow">Every Moment</span>
+          <h2 class="section__title">Celebrate every occasion.</h2>
+          <p class="section__description">
+            Select an occasion to jump straight into tailored ideas.
+          </p>
+        </div>
+
+        <div class="occasion-grid">
+
+          <a href="finder.html?occasion=Birthday" class="occasion-card">
+            <div class="occasion-card__icon">🎂</div>
+            <div class="occasion-card__name">Birthday</div>
+          </a>
+
+          <a href="finder.html?occasion=Anniversary" class="occasion-card">
+            <div class="occasion-card__icon">💍</div>
+            <div class="occasion-card__name">Anniversary</div>
+          </a>
+
+          <a href="finder.html?occasion=Wedding" class="occasion-card">
+            <div class="occasion-card__icon">💒</div>
+            <div class="occasion-card__name">Wedding</div>
+          </a>
+
+          <a href="finder.html?occasion=Valentine's Day" class="occasion-card">
+            <div class="occasion-card__icon">❤️</div>
+            <div class="occasion-card__name">Valentine's Day</div>
+          </a>
+
+          <a href="finder.html?occasion=Diwali" class="occasion-card">
+            <div class="occasion-card__icon">🪔</div>
+            <div class="occasion-card__name">Diwali</div>
+          </a>
+
+          <a href="finder.html?occasion=Christmas" class="occasion-card">
+            <div class="occasion-card__icon">🎄</div>
+            <div class="occasion-card__name">Christmas</div>
+          </a>
+
+          <a href="finder.html?occasion=Friendship Day" class="occasion-card">
+            <div class="occasion-card__icon">🤝</div>
+            <div class="occasion-card__name">Friendship Day</div>
+          </a>
+
+          <a href="finder.html?occasion=Graduation" class="occasion-card">
+            <div class="occasion-card__icon">🎓</div>
+            <div class="occasion-card__name">Graduation</div>
+          </a>
+
+          <a href="finder.html?occasion=Housewarming" class="occasion-card">
+            <div class="occasion-card__icon">🏠</div>
+            <div class="occasion-card__name">Housewarming</div>
+          </a>
+
+          <a href="finder.html?occasion=Other" class="occasion-card">
+            <div class="occasion-card__icon">✨</div>
+            <div class="occasion-card__name">Other Occasions</div>
+          </a>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Browse gifts by category -->
+    <section class="section section--secondary">
+      <div class="container">
+
+        <div class="section__header">
+          <span class="section__eyebrow">Curated Collection</span>
+          <h2 class="section__title">Explore popular categories.</h2>
+          <p class="section__description">
+            Over 100 thoughtfully chosen items across 10 specialized categories.
+          </p>
+        </div>
+
+        <div class="category-grid">
+
+          <a href="finder.html?interest=Technology" class="category-card">
+            <div class="category-card__icon">💻</div>
+            <div class="category-card__name">Technology</div>
+          </a>
+
+          <a href="finder.html?interest=Fashion" class="category-card">
+            <div class="category-card__icon">👗</div>
+            <div class="category-card__name">Fashion</div>
+          </a>
+
+          <a href="finder.html?interest=Books" class="category-card">
+            <div class="category-card__icon">📚</div>
+            <div class="category-card__name">Books</div>
+          </a>
+
+          <a href="finder.html?interest=Gaming" class="category-card">
+            <div class="category-card__icon">🎮</div>
+            <div class="category-card__name">Gaming</div>
+          </a>
+
+          <a href="finder.html?interest=Fitness" class="category-card">
+            <div class="category-card__icon">🏋️</div>
+            <div class="category-card__name">Fitness</div>
+          </a>
+
+          <a href="finder.html?interest=Beauty" class="category-card">
+            <div class="category-card__icon">💄</div>
+            <div class="category-card__name">Beauty</div>
+          </a>
+
+          <a href="finder.html?interest=Art" class="category-card">
+            <div class="category-card__icon">🎨</div>
+            <div class="category-card__name">Art &amp; Crafts</div>
+          </a>
+
+          <a href="finder.html?interest=Cooking" class="category-card">
+            <div class="category-card__icon">🍳</div>
+            <div class="category-card__name">Kitchen</div>
+          </a>
+
+          <a href="finder.html?interest=Music" class="category-card">
+            <div class="category-card__icon">🎵</div>
+            <div class="category-card__name">Music</div>
+          </a>
+
+          <a href="finder.html?interest=Travel" class="category-card">
+            <div class="category-card__icon">✈️</div>
+            <div class="category-card__name">Travel</div>
+          </a>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Gift options at different price ranges -->
+    <section class="section">
+      <div class="container">
+
+        <div class="section__header">
+          <span class="section__eyebrow">Price Transparency</span>
+          <h2 class="section__title">Fits your budget. Strictly.</h2>
+          <p class="section__description">
+            We never recommend gifts that exceed your chosen limit.
+          </p>
+        </div>
+
+        <div class="budget-showcase-grid">
+
+          <a href="finder.html?budget=Under ₹200" class="budget-card">
+            <div class="budget-card__amount">Under ₹200</div>
+            <div class="budget-card__label">Affordable &amp; Thoughtful</div>
+            <div class="budget-card__examples">
+              Notebooks, ceramic mugs, bookmarks, stickers, and desk accessories.
+            </div>
+          </a>
+
+          <a href="finder.html?budget=Under ₹500" class="budget-card" style="border-color: var(--color-primary);">
+            <div class="budget-card__amount" style="color: var(--color-primary);">Under ₹500</div>
+            <div class="budget-card__label">Most Popular Tier</div>
+            <div class="budget-card__examples">
+              Gaming gear, bestseller books, skincare kits, plants, and decor.
+            </div>
+          </a>
+
+          <a href="finder.html?budget=Under ₹1000" class="budget-card">
+            <div class="budget-card__amount">Under ₹1000</div>
+            <div class="budget-card__label">Premium Choices</div>
+            <div class="budget-card__examples">
+              Wireless audio, wristwatches, leather wallets, and smart accessories.
+            </div>
+          </a>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Link to the gift finder -->
+    <section class="section section--secondary">
+      <div class="container">
+        <div class="cta-section">
+          <h2>Ready to find something special?</h2>
+          <p>
+            Take less than two minutes to answer a few questions and view your tailored recommendations.
+          </p>
+          <a href="finder.html" class="btn btn--primary btn--large">Get Started Now</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container text-center">
+      <div style="font-size: 12px; color: var(--color-text-tertiary);">
+        &copy; 2026 GiftGenie. All rights reserved.
+      </div>
+    </div>
+  </footer>
+
+  <!-- Required JavaScript files -->
+  <script src="js/storage.js"></script>
+  <script src="js/app.js"></script>
+</body>
+
+</html>

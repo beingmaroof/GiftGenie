@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Recommendations — GiftGenie</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+
+<body>
+
+  <!-- Navigation -->
+  <nav class="nav" role="navigation" aria-label="Main navigation">
+    <div class="nav__container">
+      <a href="index.html" class="nav__logo" aria-label="GiftGenie home">
+        <svg class="nav__logo-icon" viewBox="0 0 24 24" fill="currentColor">
+          <path
+            d="M20 7h-2.18c.11-.31.18-.65.18-1 0-1.66-1.34-3-3-3-1.62 0-2.95 1.19-3 2.76L12 5.76l-.01-.01C11.95 4.19 10.62 3 9 3 7.34 3 6 4.34 6 6c0 .35.07.69.18 1H4c-1.11 0-1.99.89-1.99 2L2 19c0 1.11.89 2 2 2h16c1.11 0 2-.89 2-2V9c0-1.11-.89-2-2-2zm-5-2c.55 0 1 .45 1 1s-.45 1-1 1h-2.22c.22-.64.8-1.16 1.48-1.64.22-.16.48-.36.74-.36zM9 5c.26 0 .52.2.74.36.68.48 1.26 1 1.48 1.64H9c-.55 0-1-.45-1-1s.45-1 1-1zm11 14H4V9h7v10h2V9h7v10z" />
+        </svg>
+        <span>GiftGenie</span>
+      </a>
+      <div class="nav__links">
+        <a href="index.html" class="nav__link">Home</a>
+        <a href="finder.html" class="nav__link">Find Gifts</a>
+        <a href="wishlist.html" class="nav__link">Wishlist</a>
+      </div>
+      <a href="finder.html" class="nav__cta desktop-only">Find a Gift</a>
+      <button class="nav__mobile-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+        <div class="hamburger"><span></span><span></span></div>
+      </button>
+    </div>
+    <div class="nav__mobile-menu" role="menu">
+      <a href="index.html" class="nav__link" role="menuitem">Home</a>
+      <a href="finder.html" class="nav__link" role="menuitem">Find Gifts</a>
+      <a href="wishlist.html" class="nav__link" role="menuitem">Wishlist</a>
+      <a href="finder.html" class="btn btn--primary btn--large btn--full" style="margin-top: 16px;">Find a Gift</a>
+    </div>
+  </nav>
+
+  <main>
+    <!-- Header -->
+    <section class="page-header">
+      <div class="container">
+        <span class="section__eyebrow">Curated Results</span>
+        <h1 class="page-header__title">Recommended Gifts</h1>
+        <p class="page-header__description" id="resultsIntro">Here are the top-matching gifts based on your
+          specifications.</p>
+      </div>
+    </section>
+
+    <section class="section" style="padding-top: var(--space-8);">
+      <div class="container container--wide">
+
+        <!-- Selected Preferences Summary -->
+        <div class="results-summary" id="resultsSummary" style="display: none;">
+          <h3 class="results-summary__title">Specified Criteria</h3>
+          <div class="results-summary__tags" id="summaryTags"></div>
+        </div>
+
+        <!-- Controls: Count, Sort & Filter -->
+        <div class="results-controls" id="resultsControls" style="display: none;">
+          <div class="results-controls__count" id="resultsCount"></div>
+          <div class="results-controls__right">
+            <select class="form-select" id="sortSelect" style="max-width: 200px;" aria-label="Sort recommendations">
+              <option value="best">Best Match</option>
+              <option value="price-low">Price: Low to High</option>
+              <option value="price-high">Price: High to Low</option>
+              <option value="name-az">Name: A to Z</option>
+            </select>
+            <select class="form-select" id="categoryFilter" style="max-width: 200px;" aria-label="Filter by category">
+              <option value="">All Categories</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Results Grid -->
+        <div id="resultsContainer">
+          <div class="loading-state" id="loadingState">
+            <div class="loading-spinner"></div>
+            <p>Evaluating matches...</p>
+          </div>
+        </div>
+
+        <!-- Action Buttons -->
+        <div class="results-actions" id="resultsActions" style="display: none;">
+          <a href="finder.html" class="btn btn--secondary btn--large">Edit Preferences</a>
+          <a href="finder.html" class="btn btn--primary btn--large" onclick="Storage.clearFinderData();">Start New
+            Search</a>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Global Catalog Search -->
+    <section class="section section--secondary">
+      <div class="container">
+        <div class="section__header">
+          <h2 class="section__title">Explore all gifts.</h2>
+          <p class="section__description">Search our complete collection of 100+ gifts by name or keyword.</p>
+        </div>
+
+        <div class="search-bar" style="max-width: 480px; margin: 0 auto var(--space-6);">
+          <svg class="search-bar__icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+            stroke-width="2">
+            <circle cx="11" cy="11" r="8" />
+            <path d="M21 21l-4.35-4.35" />
+          </svg>
+          <input type="text" class="search-bar__input" id="searchInput"
+            placeholder="Search by name, category, or hobby..." aria-label="Search all gifts">
+        </div>
+
+        <div class="filter-chips" id="categoryChips" style="justify-content: center; margin-bottom: var(--space-8);">
+        </div>
+
+        <div id="searchResultsContainer" style="display: none;">
+          <p class="results-controls__count" id="searchResultsCount"
+            style="text-align: center; margin-bottom: var(--space-6);"></p>
+          <div class="results-grid" id="searchResultsGrid"></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container text-center">
+      <div style="font-size: 12px; color: var(--color-text-tertiary);">
+        &copy; 2026 GiftGenie. All rights reserved.
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/storage.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/recommendation.js"></script>
+  <script src="js/results.js"></script>
+</body>
+
+</html>

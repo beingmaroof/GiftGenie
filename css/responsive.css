@@ -1,0 +1,119 @@
+/* Scaling for Phone, Tablets, and Wide displays */
+
+@media (max-width: 1024px) {
+  :root {
+    --font-size-5xl: 3.5rem;
+    --font-size-4xl: 2.75rem;
+    --font-size-3xl: 2.25rem;
+  }
+
+  .occasion-grid,
+  .category-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .footer__grid {
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-6);
+  }
+}
+
+@media (max-width: 768px) {
+  :root {
+    --font-size-5xl: 2.75rem;
+    --font-size-4xl: 2.25rem;
+    --font-size-3xl: 1.85rem;
+    --font-size-2xl: 1.5rem;
+    --nav-height: 48px;
+  }
+
+  .section {
+    padding: var(--space-12) 0;
+  }
+
+  .nav__links,
+  .nav__cta.desktop-only {
+    display: none;
+  }
+
+  .nav__mobile-toggle {
+    display: block;
+  }
+
+  .steps-grid,
+  .budget-showcase-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .occasion-grid,
+  .category-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .detail-modal__content {
+    flex-direction: column;
+  }
+
+  .detail-modal__image-wrapper {
+    flex: none;
+    max-height: 280px;
+    width: 100%;
+  }
+
+  .results-controls {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .results-controls__right {
+    flex-direction: column;
+  }
+
+  .footer__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .footer__bottom {
+    flex-direction: column;
+    gap: var(--space-2);
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero {
+    padding: var(--space-12) 0 var(--space-8);
+  }
+
+  .hero__title {
+    font-size: 2.25rem;
+  }
+
+  .hero__description {
+    font-size: 1.1rem;
+  }
+
+  .option-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .budget-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .gift-card__actions {
+    flex-direction: column;
+  }
+
+  .gift-card__actions .btn {
+    width: 100%;
+  }
+
+  .results-actions {
+    flex-direction: column;
+  }
+
+  .results-actions .btn {
+    width: 100%;
+  }
+}

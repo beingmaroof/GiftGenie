@@ -1,0 +1,366 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gift Finder — GiftGenie</title>
+
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+
+  <!-- Main navigation -->
+  <nav class="nav" role="navigation" aria-label="Main navigation">
+    <div class="nav__container">
+
+      <a href="index.html" class="nav__logo" aria-label="GiftGenie home">
+        <svg class="nav__logo-icon" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M20 7h-2.18c.11-.31.18-.65.18-1 0-1.66-1.34-3-3-3-1.62 0-2.95 1.19-3 2.76L12 5.76l-.01-.01C11.95 4.19 10.62 3 9 3 7.34 3 6 4.34 6 6c0 .35.07.69.18 1H4c-1.11 0-1.99.89-1.99 2L2 19c0 1.11.89 2 2 2h16c1.11 0 2-.89 2-2V9c0-1.11-.89-2-2-2zm-5-2c.55 0 1 .45 1 1s-.45 1-1 1h-2.22c.22-.64.8-1.16 1.48-1.64.22-.16.48-.36.74-.36zM9 5c.26 0 .52.2.74.36.68.48 1.26 1 1.48 1.64H9c-.55 0-1-.45-1-1s.45-1 1-1zm11 14H4V9h7v10h2V9h7v10z"/>
+        </svg>
+        <span>GiftGenie</span>
+      </a>
+
+      <div class="nav__links">
+        <a href="index.html" class="nav__link">Home</a>
+        <a href="finder.html" class="nav__link active">Find Gifts</a>
+        <a href="wishlist.html" class="nav__link">Wishlist</a>
+      </div>
+
+      <a href="finder.html" class="nav__cta desktop-only">Find a Gift</a>
+
+      <button class="nav__mobile-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+        <div class="hamburger">
+          <span></span>
+          <span></span>
+        </div>
+      </button>
+    </div>
+
+    <div class="nav__mobile-menu" role="menu">
+      <a href="index.html" class="nav__link" role="menuitem">Home</a>
+      <a href="finder.html" class="nav__link" role="menuitem">Find Gifts</a>
+      <a href="wishlist.html" class="nav__link" role="menuitem">Wishlist</a>
+      <a href="finder.html" class="btn btn--primary btn--large btn--full" style="margin-top: 16px;">Find a Gift</a>
+    </div>
+  </nav>
+
+  <main>
+
+    <!-- Page heading -->
+    <section class="page-header">
+      <div class="container container--narrow">
+        <span class="section__eyebrow">Interactive Discovery</span>
+        <h1 class="page-header__title">Find the Perfect Gift</h1>
+        <p class="page-header__description">
+          Specify their details and your budget ceiling. We'll find what suits them best.
+        </p>
+      </div>
+    </section>
+
+    <section class="section" style="padding-top: var(--space-8);">
+      <div class="container container--narrow">
+
+        <!-- Shows how much of the form has been completed -->
+        <div class="profile-completion" id="profileCompletion">
+          <div class="profile-completion__circle">
+            <svg viewBox="0 0 64 64">
+              <circle class="profile-completion__track" cx="32" cy="32" r="27"/>
+              <circle
+                class="profile-completion__progress"
+                cx="32"
+                cy="32"
+                r="27"
+                stroke-dasharray="169.6"
+                stroke-dashoffset="169.6"
+                id="progressCircle"
+              />
+            </svg>
+            <div class="profile-completion__value" id="progressValue">0%</div>
+          </div>
+
+          <div class="profile-completion__info">
+            <div class="profile-completion__label" id="progressLabel">Let's get started</div>
+            <div class="profile-completion__message" id="progressMessage">
+              Fill in the required fields below to receive recommendations.
+            </div>
+          </div>
+        </div>
+
+        <!-- Gift finder form -->
+        <form id="finderForm" novalidate>
+
+          <!-- Occasion and relationship -->
+          <div class="finder-form__section">
+            <h2 class="finder-form__section-title">Occasion &amp; Relationship</h2>
+            <p class="finder-form__section-subtitle">
+              Who are you celebrating and what is the occasion?
+            </p>
+
+            <div class="form-group">
+              <label class="form-label form-label--required" for="occasion">Occasion</label>
+              <select class="form-select" id="occasion" name="occasion" required>
+                <option value="">Select an occasion</option>
+                <option value="Birthday">Birthday</option>
+                <option value="Anniversary">Anniversary</option>
+                <option value="Wedding">Wedding</option>
+                <option value="Valentine's Day">Valentine's Day</option>
+                <option value="Diwali">Diwali</option>
+                <option value="Christmas">Christmas</option>
+                <option value="Friendship Day">Friendship Day</option>
+                <option value="Graduation">Graduation</option>
+                <option value="Housewarming">Housewarming</option>
+                <option value="Other">Other</option>
+              </select>
+              <p class="form-error" id="occasionError" style="display: none;"></p>
+            </div>
+
+            <div class="form-group" style="margin-bottom: 0;">
+              <label class="form-label form-label--required" for="relationship">Relationship</label>
+              <select class="form-select" id="relationship" name="relationship" required>
+                <option value="">Select relationship</option>
+                <option value="Father">Father</option>
+                <option value="Mother">Mother</option>
+                <option value="Brother">Brother</option>
+                <option value="Sister">Sister</option>
+                <option value="Son">Son</option>
+                <option value="Daughter">Daughter</option>
+                <option value="Husband">Husband</option>
+                <option value="Wife">Wife</option>
+                <option value="Partner">Partner</option>
+                <option value="Boyfriend">Boyfriend</option>
+                <option value="Girlfriend">Girlfriend</option>
+                <option value="Friend">Friend</option>
+                <option value="Best Friend">Best Friend</option>
+                <option value="Colleague">Colleague</option>
+                <option value="Teacher">Teacher</option>
+                <option value="Other">Other</option>
+              </select>
+              <p class="form-error" id="relationshipError" style="display: none;"></p>
+            </div>
+          </div>
+
+          <!-- Budget selection -->
+          <div class="finder-form__section">
+            <h2 class="finder-form__section-title">Budget Ceiling</h2>
+            <p class="finder-form__section-subtitle">
+              Recommendations will never exceed this price.
+            </p>
+
+            <div class="form-group" style="margin-bottom: 0;">
+              <label class="form-label form-label--required">Select Budget</label>
+
+              <div class="budget-grid" id="budgetGrid">
+                <div class="option-card">
+                  <input type="radio" name="budget" id="budget_no" value="No Budget">
+                  <label for="budget_no">No Budget</label>
+                </div>
+                <div class="option-card">
+                  <input type="radio" name="budget" id="budget_100" value="Under ₹100">
+                  <label for="budget_100">Under ₹100</label>
+                </div>
+                <div class="option-card">
+                  <input type="radio" name="budget" id="budget_200" value="Under ₹200">
+                  <label for="budget_200">Under ₹200</label>
+                </div>
+                <div class="option-card">
+                  <input type="radio" name="budget" id="budget_300" value="Under ₹300">
+                  <label for="budget_300">Under ₹300</label>
+                </div>
+                <div class="option-card">
+                  <input type="radio" name="budget" id="budget_400" value="Under ₹400">
+                  <label for="budget_400">Under ₹400</label>
+                </div>
+                <div class="option-card">
+                  <input type="radio" name="budget" id="budget_500" value="Under ₹500">
+                  <label for="budget_500">Under ₹500</label>
+                </div>
+                <div class="option-card">
+                  <input type="radio" name="budget" id="budget_600" value="Under ₹600">
+                  <label for="budget_600">Under ₹600</label>
+                </div>
+                <div class="option-card">
+                  <input type="radio" name="budget" id="budget_700" value="Under ₹700">
+                  <label for="budget_700">Under ₹700</label>
+                </div>
+                <div class="option-card">
+                  <input type="radio" name="budget" id="budget_800" value="Under ₹800">
+                  <label for="budget_800">Under ₹800</label>
+                </div>
+                <div class="option-card">
+                  <input type="radio" name="budget" id="budget_900" value="Under ₹900">
+                  <label for="budget_900">Under ₹900</label>
+                </div>
+                <div class="option-card">
+                  <input type="radio" name="budget" id="budget_1000" value="Under ₹1000">
+                  <label for="budget_1000">Under ₹1000</label>
+                </div>
+              </div>
+
+              <p class="form-error" id="budgetError" style="display: none;"></p>
+            </div>
+          </div>
+
+          <!-- Basic details about the recipient -->
+          <div class="finder-form__section">
+            <h2 class="finder-form__section-title">About the Recipient</h2>
+            <p class="finder-form__section-subtitle">
+              Demographics to help match age suitability.
+            </p>
+
+            <div class="form-group">
+              <label class="form-label form-label--required" for="age">Age</label>
+              <input
+                type="number"
+                class="form-input"
+                id="age"
+                name="age"
+                min="1"
+                max="120"
+                placeholder="Enter age in years"
+                required
+              >
+              <p class="form-error" id="ageError" style="display: none;"></p>
+            </div>
+
+            <div class="form-group" style="margin-bottom: 0;">
+              <label class="form-label form-label--required">Gender</label>
+
+              <div class="option-grid" style="grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));">
+                <div class="option-card">
+                  <input type="radio" name="gender" id="gender_male" value="Male">
+                  <label for="gender_male">Male</label>
+                </div>
+                <div class="option-card">
+                  <input type="radio" name="gender" id="gender_female" value="Female">
+                  <label for="gender_female">Female</label>
+                </div>
+                <div class="option-card">
+                  <input type="radio" name="gender" id="gender_other" value="Other">
+                  <label for="gender_other">Other</label>
+                </div>
+                <div class="option-card">
+                  <input type="radio" name="gender" id="gender_pnts" value="Prefer not to say">
+                  <label for="gender_pnts">Prefer not to say</label>
+                </div>
+              </div>
+
+              <p class="form-error" id="genderError" style="display: none;"></p>
+            </div>
+          </div>
+
+          <!-- Optional hobbies and interests -->
+          <div class="finder-form__section">
+            <h2 class="finder-form__section-title">
+              Hobbies &amp; Interests
+              <span class="badge badge--primary" style="font-size: 11px; margin-left: 8px;">Optional</span>
+            </h2>
+            <p class="finder-form__section-subtitle">
+              Select any hobbies they enjoy to fine-tune matching accuracy.
+            </p>
+
+            <div class="option-grid" id="interestsGrid">
+              <div class="option-card"><input type="checkbox" name="interests" id="int_gaming" value="Gaming"><label for="int_gaming">Gaming</label></div>
+              <div class="option-card"><input type="checkbox" name="interests" id="int_music" value="Music"><label for="int_music">Music</label></div>
+              <div class="option-card"><input type="checkbox" name="interests" id="int_movies" value="Movies"><label for="int_movies">Movies</label></div>
+              <div class="option-card"><input type="checkbox" name="interests" id="int_books" value="Books"><label for="int_books">Books</label></div>
+              <div class="option-card"><input type="checkbox" name="interests" id="int_photography" value="Photography"><label for="int_photography">Photography</label></div>
+              <div class="option-card"><input type="checkbox" name="interests" id="int_fitness" value="Fitness"><label for="int_fitness">Fitness</label></div>
+              <div class="option-card"><input type="checkbox" name="interests" id="int_sports" value="Sports"><label for="int_sports">Sports</label></div>
+              <div class="option-card"><input type="checkbox" name="interests" id="int_cooking" value="Cooking"><label for="int_cooking">Cooking</label></div>
+              <div class="option-card"><input type="checkbox" name="interests" id="int_travel" value="Travel"><label for="int_travel">Travel</label></div>
+              <div class="option-card"><input type="checkbox" name="interests" id="int_art" value="Art"><label for="int_art">Art &amp; Design</label></div>
+              <div class="option-card"><input type="checkbox" name="interests" id="int_fashion" value="Fashion"><label for="int_fashion">Fashion</label></div>
+              <div class="option-card"><input type="checkbox" name="interests" id="int_technology" value="Technology"><label for="int_technology">Technology</label></div>
+              <div class="option-card"><input type="checkbox" name="interests" id="int_cars" value="Cars"><label for="int_cars">Cars</label></div>
+              <div class="option-card"><input type="checkbox" name="interests" id="int_bikes" value="Bikes"><label for="int_bikes">Bikes</label></div>
+              <div class="option-card"><input type="checkbox" name="interests" id="int_beauty" value="Beauty"><label for="int_beauty">Beauty</label></div>
+              <div class="option-card"><input type="checkbox" name="interests" id="int_gardening" value="Gardening"><label for="int_gardening">Gardening</label></div>
+              <div class="option-card"><input type="checkbox" name="interests" id="int_pets" value="Pets"><label for="int_pets">Pets</label></div>
+            </div>
+          </div>
+
+          <!-- Optional personality and career details -->
+          <div class="finder-form__section">
+            <h2 class="finder-form__section-title">
+              Personality &amp; Career
+              <span class="badge badge--primary" style="font-size: 11px; margin-left: 8px;">Optional</span>
+            </h2>
+            <p class="finder-form__section-subtitle">
+              Additional context for personalized ranking.
+            </p>
+
+            <div class="form-group">
+              <label class="form-label" for="occupation">Occupation</label>
+              <select class="form-select" id="occupation" name="occupation">
+                <option value="">Select occupation (optional)</option>
+                <option value="Student">Student</option>
+                <option value="Teacher">Teacher</option>
+                <option value="Doctor">Doctor</option>
+                <option value="Engineer">Engineer</option>
+                <option value="Designer">Designer</option>
+                <option value="Business Owner">Business Owner</option>
+                <option value="Freelancer">Freelancer</option>
+                <option value="IT Professional">IT Professional</option>
+                <option value="Government Employee">Government Employee</option>
+                <option value="Other">Other</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label">Personality</label>
+
+              <div class="option-grid" id="personalityGrid">
+                <div class="option-card"><input type="checkbox" name="personality" id="pers_introvert" value="Introvert"><label for="pers_introvert">Introvert</label></div>
+                <div class="option-card"><input type="checkbox" name="personality" id="pers_extrovert" value="Extrovert"><label for="pers_extrovert">Extrovert</label></div>
+                <div class="option-card"><input type="checkbox" name="personality" id="pers_creative" value="Creative"><label for="pers_creative">Creative</label></div>
+                <div class="option-card"><input type="checkbox" name="personality" id="pers_adventurous" value="Adventurous"><label for="pers_adventurous">Adventurous</label></div>
+                <div class="option-card"><input type="checkbox" name="personality" id="pers_practical" value="Practical"><label for="pers_practical">Practical</label></div>
+                <div class="option-card"><input type="checkbox" name="personality" id="pers_techsavvy" value="Tech-savvy"><label for="pers_techsavvy">Tech-savvy</label></div>
+              </div>
+            </div>
+
+            <div class="form-group" style="margin-bottom: 0;">
+              <label class="form-label" for="additionalText">Additional Notes</label>
+              <textarea
+                class="form-textarea"
+                id="additionalText"
+                name="additionalText"
+                placeholder="e.g. Loves minimalist desk setups, prefers eco-friendly materials..."
+                rows="3"
+              ></textarea>
+            </div>
+          </div>
+
+          <!-- Form buttons -->
+          <div style="display: flex; gap: var(--space-4); align-items: center; justify-content: flex-end; margin-top: var(--space-8);">
+            <button type="button" class="btn btn--secondary btn--large" id="clearFormBtn">
+              Clear Form
+            </button>
+            <button type="submit" class="btn btn--primary btn--large">
+              Generate Recommendations
+            </button>
+          </div>
+
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container text-center">
+      <div style="font-size: 12px; color: var(--color-text-tertiary);">
+        &copy; 2026 GiftGenie. All rights reserved.
+      </div>
+    </div>
+  </footer>
+
+  <!-- JavaScript files -->
+  <script src="js/storage.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/finder.js"></script>
+</body>
+</html>
