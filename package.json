@@ -2,6 +2,11 @@
   "name": "giftgenie",
   "version": "1.0.0",
   "description": "Personalized Gift Recommendation Web Application - BCA 5th Semester Summer Training Project",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
   "keywords": [
     "gift-recommendation",
     "vanilla-js",
